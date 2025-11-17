@@ -1,4 +1,4 @@
-package aims.models;
+package com.hust.kstn.models;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 
@@ -104,4 +104,14 @@ public class DigitalVideoDisc {
 		
 		return zdt.format(f1);
 	}
+
+	@Override
+	public String toString() {
+		return "DVD[" + this.id + "] - "
+				+ this.title + " - "
+				+ this.price + " - "
+				+ this.length + " - "
+				+ this.category + " - "
+				+ this.director;
+ 	}
 }

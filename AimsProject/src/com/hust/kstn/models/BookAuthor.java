@@ -1,4 +1,4 @@
-package aims.models;
+package com.hust.kstn.models;
 
 public class BookAuthor {
     

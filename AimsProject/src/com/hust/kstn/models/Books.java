@@ -1,4 +1,4 @@
-package aims.models;
+package com.hust.kstn.models;
 import java.util.Collections;
 import java.util.List;
 import java.util.ArrayList;

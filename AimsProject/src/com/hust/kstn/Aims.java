@@ -1,8 +1,8 @@
-package aims;
-
-import aims.models.*;
+package com.hust.kstn;
 
 import java.util.Scanner;
+
+import com.hust.kstn.models.*;
 
 public class Aims {
 

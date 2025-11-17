@@ -1,11 +1,11 @@
-package aims.models;
+package com.hust.kstn.models;
 import java.util.Collections;
 import java.util.List;
 import java.util.ArrayList;
 
 public class Cart {
 	private ArrayList<DigitalVideoDisc> items = new ArrayList<>();
-	private final int MAX_NUMBER_ORDERED = 36;
+	private final int MAX_NUMBER_ORDERED = 20;
 	private int quantityOrdered = 0;
 	private double totalCost = 0;
 	
@@ -27,6 +27,11 @@ public class Cart {
 	}
 	
 	public void removeDVD(DigitalVideoDisc disc) {
+		if (items.isEmpty()) {
+			System.out.println("There is no discs in cart");
+			return;
+		}
+
 		if (items.remove(disc)) {
 			this.totalCost -= disc.getPrice();
 			this.quantityOrdered--;
@@ -53,12 +58,7 @@ public class Cart {
 		double subtotal = 0.0;
 		for (DigitalVideoDisc disc : items) {
 			subtotal += disc.getPrice();
-			System.out.println("- DVD[" + disc.getID() + "] - "
-							+ disc.getTitle() + " - "
-							+ disc.getPrice() + " - "
-							+ disc.getLength() + " - "
-							+ disc.getCategory() + " - "
-							+ disc.getDirector());
+			System.out.println("- " + disc.toString());
 		}
 
 		System.out.println();
