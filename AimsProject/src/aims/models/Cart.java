@@ -4,9 +4,9 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Cart {
-	private ArrayList<DigitalVideoDisc> Items = new ArrayList<>();
+	private ArrayList<DigitalVideoDisc> items = new ArrayList<>();
 	private final int MAX_NUMBER_ORDERED = 36;
-	private int QuantityOrdered = 0;
+	private int quantityOrdered = 0;
 	private double totalCost = 0;
 	
 	public double calculateTotalCost() {
@@ -14,22 +14,22 @@ public class Cart {
 	}
 	
 	public void addDVD(DigitalVideoDisc disc) {
-		if (this.QuantityOrdered == MAX_NUMBER_ORDERED) {
+		if (this.quantityOrdered == MAX_NUMBER_ORDERED) {
 			System.out.println("Reached maximum number of discs in cart");
 			return;
 		}
-		this.Items.add(disc);
+		this.items.add(disc);
 		this.totalCost += disc.getPrice();
-		this.QuantityOrdered++;
+		this.quantityOrdered++;
 		System.out.println("Added " + disc.getTitle() + " successfully");
 		
 		return;
 	}
 	
 	public void removeDVD(DigitalVideoDisc disc) {
-		if (Items.remove(disc)) {
+		if (items.remove(disc)) {
 			this.totalCost -= disc.getPrice();
-			this.QuantityOrdered--;
+			this.quantityOrdered--;
 			System.out.println("Removed " + disc.getTitle() + " successfully");
 			return;
 		}
@@ -40,24 +40,30 @@ public class Cart {
 	}
 	
 	public void printItems() {
-		if (this.Items.isEmpty()) {
-			System.out.println("No discs in cart currently");
+		System.out.println("============= THE CURRENT CART =============");
+
+		if (this.items.isEmpty()) {
+			System.out.println("The cart is currently empty.");
+			System.out.println("============================================");
 			return;
 		}
-		
-		int number = 0;
-		for (DigitalVideoDisc disc : Items) {
-			++number;
-			System.out.printf("Disc number %d: \n", number);
-			System.out.println("Title: " + disc.getTitle());
-			System.out.println("Category: " + disc.getCategory());
-			System.out.println("Length: " + disc.getLength());
-			System.out.println("Price: " + disc.getPrice());
-			System.out.println("Added Time: " + disc.getAddedTime());
-			System.out.println();
+
+		System.out.println("Total items: " + this.items.size());
+
+		double subtotal = 0.0;
+		for (DigitalVideoDisc disc : items) {
+			subtotal += disc.getPrice();
+			System.out.println("- DVD[" + disc.getID() + "] - "
+							+ disc.getTitle() + " - "
+							+ disc.getPrice() + " - "
+							+ disc.getLength() + " - "
+							+ disc.getCategory() + " - "
+							+ disc.getDirector());
 		}
-		
-		return;
+
+		System.out.println();
+		System.out.println("Subtotal: " + subtotal + "$");
+		System.out.println("============================================");
 	}
 	
 	public void sortByTitle(List<DigitalVideoDisc> items) {
@@ -85,16 +91,16 @@ public class Cart {
 	}
 	
 	public void sortCartByTitle() {
-		sortByTitle(this.Items);
+		sortByTitle(this.items);
 	}
 	
 	public void sortCartByPrice() {
-		sortByPrice(this.Items);
+		sortByPrice(this.items);
 	}
 	
-	public void searchByID(String ID) {
-		for (DigitalVideoDisc disc : this.Items) {
-			if (disc.getID().compareToIgnoreCase(ID) == 0) {
+	public void searchByID(String id) {
+		for (DigitalVideoDisc disc : this.items) {
+			if (disc.getID().compareToIgnoreCase(id) == 0) {
 				System.out.println("Title: " + disc.getTitle());
 				System.out.println("Category: " + disc.getCategory());
 				System.out.println("Length: " + disc.getLength());
@@ -110,10 +116,10 @@ public class Cart {
 		return;
 	}
 	
-	public void searchByTitle(String Title) {
-		if (Title == null || Title.isEmpty()) return;
-	    String q = Title.toLowerCase();
-	    for (DigitalVideoDisc disc : Items) {
+	public void searchByTitle(String title) {
+		if (title == null || title.isEmpty()) return;
+	    String q = title.toLowerCase();
+	    for (DigitalVideoDisc disc : items) {
 	        String t = disc.getTitle();
 	        if (t != null && t.toLowerCase().contains(q)) {
 	        	System.out.println("Title: " + disc.getTitle());
@@ -132,9 +138,9 @@ public class Cart {
 	
 	
 	public void createBill() {
-		System.out.println("You have ordered " + this.QuantityOrdered + " discs in total");
+		System.out.println("You have ordered " + this.quantityOrdered + " discs in total");
 		int number = 0;
-		for (DigitalVideoDisc disc : Items) {
+		for (DigitalVideoDisc disc : items) {
 			++number;
 			System.out.printf("Disc %d: \n", number);
 			System.out.println("Title: " + disc.getTitle());

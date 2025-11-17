@@ -6,5 +6,5 @@ import java.util.ArrayList;
 
 public class Books {
     private List<BookAuthor> authors = new ArrayList<>();
-    private String FullName = 
+
 }

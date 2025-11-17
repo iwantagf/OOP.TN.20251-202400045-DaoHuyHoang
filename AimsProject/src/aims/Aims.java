@@ -8,11 +8,11 @@ public class Aims {
 
 	public static void main(String[] args) {
 		//ID duoc danh so theo thu tu them vao
-		DigitalVideoDisc ManOfSteel = new DigitalVideoDisc("Sci-fi", 50.0f, "Man of Steel", 180); //id = 0
-		DigitalVideoDisc Batman = new DigitalVideoDisc("Action", 36.0f, "Batman", 120); //id = 1
-		DigitalVideoDisc FiftyDaysToLove = new DigitalVideoDisc("Rom-com", 40.0f, "Fifty Days To Love", 140); //id = 2
-		DigitalVideoDisc SpiderManNWH = new DigitalVideoDisc("Sci-fi, Action, Romance", 50.0f, "Spider Man No Way Home", 150); //id = 3
-		DigitalVideoDisc CuaLaiVoBau = new DigitalVideoDisc("Bullshit Vietnamese Film, Romance", -30.0f, "Cua lai vo bau", 100); //id = 4
+		DigitalVideoDisc manOfSteel = new DigitalVideoDisc("Sci-fi", 50.0f, "Man of Steel", 180, "Zack Snyder"); //id = 0
+		DigitalVideoDisc batman = new DigitalVideoDisc("Action", 36.0f, "Batman", 120, "Christopher Nolan"); //id = 1
+		DigitalVideoDisc fiftyDaysToLove = new DigitalVideoDisc("Rom-com", 40.0f, "Fifty Days To Love", 140); //id = 2
+		DigitalVideoDisc spiderManNwh = new DigitalVideoDisc("Sci-fi, Action, Romance", 50.0f, "Spider Man No Way Home", 150, "Jon Watts"); //id = 3
+		DigitalVideoDisc cuaLaiVoBau = new DigitalVideoDisc("Bullshit Vietnamese Film, Romance", -30.0f, "Cua lai vo bau", 100); //id = 4
 		
 		Cart cart = new Cart();
 		Scanner sc = new Scanner(System.in);
@@ -59,19 +59,19 @@ public class Aims {
 				
 				switch (chosenDisc) {
 					case 1:
-						cart.addDVD(ManOfSteel);
+						cart.addDVD(manOfSteel);
 						break;
 					case 2:
-						cart.addDVD(Batman);
+						cart.addDVD(batman);
 						break;
 					case 3:
-						cart.addDVD(FiftyDaysToLove);
+						cart.addDVD(fiftyDaysToLove);
 						break;
 					case 4:
-						cart.addDVD(SpiderManNWH);
+						cart.addDVD(spiderManNwh);
 						break;
 					case 5:
-						cart.addDVD(CuaLaiVoBau);
+						cart.addDVD(cuaLaiVoBau);
 						break;
 					default:
 						System.out.println("We haven't had this disc in the list");
@@ -92,19 +92,19 @@ public class Aims {
 				
 				switch (chosenDisc) {
 					case 1:
-						cart.removeDVD(ManOfSteel);
+						cart.removeDVD(manOfSteel);
 						break;
 					case 2:
-						cart.removeDVD(Batman);
+						cart.removeDVD(batman);
 						break;
 					case 3:
-						cart.removeDVD(FiftyDaysToLove);
+						cart.removeDVD(fiftyDaysToLove);
 						break;
 					case 4:
-						cart.removeDVD(SpiderManNWH);
+						cart.removeDVD(spiderManNwh);
 						break;
 					case 5:
-						cart.removeDVD(CuaLaiVoBau);
+						cart.removeDVD(cuaLaiVoBau);
 						break;
 					default:
 						System.out.println("We haven't had this disc in the list");
@@ -131,8 +131,8 @@ public class Aims {
 			
 			if (option == 6) {
 				System.out.println("Enter an ID: ");
-				String ID = String.valueOf(sc.nextInt());
-				cart.searchByID(ID);
+				String id = String.valueOf(sc.nextInt());
+				cart.searchByID(id);
 				continue;
 			}
 			
