@@ -7,11 +7,11 @@ public class CartTest {
     public static void main(String[] args) {
         Cart cart = new Cart();
 
-        DigitalVideoDisc manOfSteel = new DigitalVideoDisc("Sci-fi", 50.0f, "Man of Steel", 180, "Zack Snyder");
-        DigitalVideoDisc batman = new DigitalVideoDisc("Action", 36.0f, "Batman", 120, "Christopher Nolan");
-        DigitalVideoDisc fiftyDaysToLove = new DigitalVideoDisc("Rom-com", 40.0f, "Fifty Days To Love", 140);
-        DigitalVideoDisc spiderManNwh = new DigitalVideoDisc("Sci-fi, Action, Romance", 50.0f, "Spider Man No Way Home", 150, "Jon Watts");
-        DigitalVideoDisc cuaLaiVoBau = new DigitalVideoDisc("Bullshit Vietnamese Film, Romance", -30.0f, "Cua lai vo bau", 100);
+        DigitalVideoDisc manOfSteel = new DigitalVideoDisc("Sci-fi", 50.0, "Man of Steel", 180, "Zack Snyder");
+        DigitalVideoDisc batman = new DigitalVideoDisc("Action", 36.0, "Batman", 120, "Christopher Nolan");
+        DigitalVideoDisc fiftyDaysToLove = new DigitalVideoDisc("Rom-com", 40.0, "Fifty Days To Love", 140, "Dao Huy Hoang");
+        DigitalVideoDisc spiderManNwh = new DigitalVideoDisc("Sci-fi, Action, Romance", 50.0, "Spider Man No Way Home", 150, "Jon Watts");
+        DigitalVideoDisc cuaLaiVoBau = new DigitalVideoDisc("Bullshit Vietnamese Film, Romance", -30.0, "Cua lai vo bau", 100, "Dao Huy Hoang");
 
         System.out.println("===== TEST 1: CART CAPACITY (20 ITEMS MAX) =====");
         for (int i = 0; i < 30; i++) {

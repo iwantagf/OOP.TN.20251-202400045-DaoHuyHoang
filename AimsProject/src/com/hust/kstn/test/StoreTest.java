@@ -9,11 +9,11 @@ public class StoreTest {
         Store myStore = new Store();
 
         //ID duoc danh so theo thu tu them vao
-		DigitalVideoDisc manOfSteel = new DigitalVideoDisc("Sci-fi", 50.0f, "Man of Steel", 180, "Zack Snyder"); //id = 0
-		DigitalVideoDisc batman = new DigitalVideoDisc("Action", 36.0f, "Batman", 120, "Christopher Nolan"); //id = 1
-		DigitalVideoDisc fiftyDaysToLove = new DigitalVideoDisc("Rom-com", 40.0f, "Fifty Days To Love", 140); //id = 2
-		DigitalVideoDisc spiderManNwh = new DigitalVideoDisc("Sci-fi, Action, Romance", 50.0f, "Spider Man No Way Home", 150, "Jon Watts"); //id = 3
-		DigitalVideoDisc cuaLaiVoBau = new DigitalVideoDisc("Bullshit Vietnamese Film, Romance", -30.0f, "Cua lai vo bau", 100); //id = 4
+		DigitalVideoDisc manOfSteel = new DigitalVideoDisc("Sci-fi", 50.0, "Man of Steel", 180, "Zack Snyder"); //id = 0
+		DigitalVideoDisc batman = new DigitalVideoDisc("Action", 36.0, "Batman", 120, "Christopher Nolan"); //id = 1
+		DigitalVideoDisc fiftyDaysToLove = new DigitalVideoDisc("Rom-com", 40.0, "Fifty Days To Love", 140, "Dao Huy Hoang"); //id = 2
+		DigitalVideoDisc spiderManNwh = new DigitalVideoDisc("Sci-fi, Action, Romance", 50.0, "Spider Man No Way Home", 150, "Jon Watts"); //id = 3
+		DigitalVideoDisc cuaLaiVoBau = new DigitalVideoDisc("Bullshit Vietnamese Film, Romance", -30.0, "Cua lai vo bau", 100, "Dao Huy Hoang"); //id = 4
 
 
         System.out.println("===== TEST 1: STORE CAPACITY (100 ITEMS MAX) =====");

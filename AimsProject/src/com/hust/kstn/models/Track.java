@@ -13,15 +13,13 @@ public class Track {
         return title;
     }
 
-    public int getLength() {
-        return length;
-    }
-
     @Override
     public String toString() {
         return "Track[" + this.title + "][" + this.length + "]";
     }
 
-
+    public int getLength() {
+        return length;
+    }
 }
 
