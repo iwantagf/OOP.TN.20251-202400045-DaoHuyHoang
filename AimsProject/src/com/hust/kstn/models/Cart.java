@@ -13,17 +13,35 @@ public class Cart {
 		return this.totalCost;
 	}
 	
-	public void addDVD(DigitalVideoDisc disc) {
-		if (this.quantityOrdered == MAX_NUMBER_ORDERED) {
-			System.out.println("Reached maximum number of discs in cart");
+	public void addDVD(DigitalVideoDisc... discs) {
+		if (discs == null || discs.length == 0) {
 			return;
 		}
-		this.items.add(disc);
-		this.totalCost += disc.getPrice();
-		this.quantityOrdered++;
-		System.out.println("Added " + disc.getTitle() + " successfully");
-		
-		return;
+
+		for (DigitalVideoDisc disc : discs) {
+			if (disc == null) continue;
+
+			if (this.quantityOrdered == MAX_NUMBER_ORDERED) {
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					Thread.currentThread().interrupt();
+				}
+				System.out.println("Reached maximum number of discs in cart!");
+				return;
+			}
+
+			this.items.add(disc);
+			this.totalCost += disc.getPrice();
+			this.quantityOrdered++;
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				Thread.currentThread().interrupt();
+			} //Đợi 1s rồi in cho uy tín hahahahahahahahahahahahahahahahahahahahahaha
+
+			System.out.println("Added " + disc.getTitle() + " successfully");
+		}
 	}
 	
 	public void removeDVD(DigitalVideoDisc disc) {
@@ -56,7 +74,7 @@ public class Cart {
 		System.out.println("Total items: " + this.items.size());
 
 		double subtotal = 0.0;
-		for (DigitalVideoDisc disc : items) {
+		for (DigitalVideoDisc disc : this.items) {
 			subtotal += disc.getPrice();
 			System.out.println("- " + disc.toString());
 		}

@@ -154,22 +154,5 @@ public class Aims {
 		
 		return;
 	}
-	
-	public static final class ItemCounter {
-		private ItemCounter() {}
-		
-		public static int count = 0;
-		
-		public static void increase() {
-			++count;
-		}
-		
-		public static int get() {
-			return count;
-		}
-		
-		public static void reset() {
-			count = 0;
-		}
-	}
+
 }
